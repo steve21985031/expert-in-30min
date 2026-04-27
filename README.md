@@ -26,6 +26,16 @@ By default, the skill produces two aligned outputs:
 
 These outputs map section-to-section. The HTML is not a second content system; it is the visual layer of the same document.
 
+## Typical Use Cases
+
+- Content creation for articles, videos, podcasts, and livestreams
+- Course packaging and consulting-style offer design
+- Fast orientation in a new industry or technical topic
+- Talk, workshop, and internal briefing preparation
+- Sales communication for complex topics
+- IP positioning for “insightful expert” style content
+- Structured mini knowledge packs with matching HTML presentation
+
 ## Input Flow
 
 The skill starts by asking two questions:
@@ -83,4 +93,3 @@ This skill is designed to solve that exact gap.
 
 - This skill is for structured understanding and communication speed, not regulated professional substitution.
 - High-risk areas such as law, medicine, and finance still require domain-specific validation.
-
