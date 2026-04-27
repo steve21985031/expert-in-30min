@@ -1,57 +1,86 @@
 # expert-in-30min
 
-`expert-in-30min` is a skill for rapidly building a usable expert-level communication frame for an unfamiliar domain in about 30 minutes.
+> Build a credible domain-expert communication frame in about 30 minutes.
 
-It is designed for scenarios such as:
+[中文说明](./README.zh.md)
+
+<img src="./assets/images/expert-in-30min-concept-map.svg" alt="expert-in-30min concept map" width="980">
+
+## What It Is
+
+`expert-in-30min` is a workflow-style skill for rapidly turning an unfamiliar topic into a structured expert-style output package.
+
+It is built for scenarios such as:
 
 - preparing a talk, livestream, workshop, or podcast
-- drafting a course outline or sales page
-- building a consulting-style point of view fast
-- turning scattered research into a structured narrative
+- drafting a course outline, consulting brief, or sales narrative
+- turning scattered research into a strong point of view
+- generating a structured report and a corresponding HTML presentation
 
 ## What It Produces
 
-By default, the skill is designed to generate two aligned outputs:
+By default, the skill produces two aligned outputs:
 
-1. `report.md` — a single structured source document
-2. `index.html` — a polished visual version of the same content
+1. `report.md` — the single structured source document
+2. `index.html` — a polished visual rendering of the same structure
 
-The output structure covers:
-
-- a 30-second explanation
-- a 3-minute explanation
-- domain skeleton
-- terminology
-- mainstream views
-- core debates
-- outdated narratives
-- reusable expert-style talking points
-- FAQ
-- risk boundaries
-- action suggestions
+These outputs map section-to-section. The HTML is not a second content system; it is the visual layer of the same document.
 
 ## Input Flow
 
 The skill starts by asking two questions:
 
-1. What domain do you want to get up to speed on?
-2. Which style do you want?
+1. What domain do you want to learn fast?
+2. Which output style do you want?
    - `学院派`
    - `咨询派`
    - `IP派`
 
-## Folder Structure
+## Core Structure
 
 ```text
 expert-in-30min/
 ├── SKILL.md
 ├── Spec-expert-in-30min.md
 ├── README.md
+├── README.zh.md
+├── assets/
+│   └── images/
 ├── references/
 └── scripts/
 ```
 
+## Typical Sections In Output
+
+- Basic info
+- 30-second explanation
+- 3-minute explanation
+- Domain skeleton
+- Terminology
+- Mainstream views
+- Core debates
+- Outdated narratives
+- Reusable expert-style talking points
+- FAQ
+- Risk boundaries
+- Action suggestions
+
+## Why It Exists
+
+Most people do not fail because they cannot find information. They fail because they cannot compress it into a usable structure, a confident narrative, and a repeatable format.
+
+This skill is designed to solve that exact gap.
+
+## Files
+
+- `SKILL.md`: the runnable entry and execution rules
+- `Spec-expert-in-30min.md`: product and workflow design spec
+- `references/`: supporting rules for output modes, packaging, search, and guardrails
+- `scripts/`: helper scripts such as opening the generated HTML
+- `assets/images/`: public-facing diagrams and visual aids for the repo
+
 ## Notes
 
-- This skill is meant to build judgment, structure, and communicative confidence.
-- It should not be treated as a substitute for regulated professional advice in areas like law, medicine, or finance.
+- This skill is for structured understanding and communication speed, not regulated professional substitution.
+- High-risk areas such as law, medicine, and finance still require domain-specific validation.
+

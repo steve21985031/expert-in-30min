@@ -1,5 +1,25 @@
 # Spec: expert-in-30min
 
+## 0. Recommended Architecture Tree
+
+```text
+expert-in-30min/
+├── SKILL.md
+├── Spec-expert-in-30min.md
+├── README.md
+├── README.zh.md
+├── assets/
+│   └── images/
+│       └── expert-in-30min-concept-map.svg
+├── references/
+│   ├── output-modes.md
+│   ├── output-package.md
+│   ├── search-strategy.md
+│   └── guardrails.md
+└── scripts/
+    └── open_html_report.sh
+```
+
 ## 1. 定位
 
 `expert-in-30min` 是一个“陌生领域快速建模与专家感输出”技能。
@@ -45,6 +65,7 @@
 5. `先问再做`：每次运行前都要先收集领域和表达风格
 6. `默认交付统一双文件`：不是吐一段文本，而是生成一个结构化文档和一个对应 HTML
 7. `默认浏览器可视化`：交付后自动打开 HTML 总览页
+8. `公开展示可读`：公开 repo 默认包含双语 README 和概念图预览
 
 ## 4. 非目标
 
@@ -55,7 +76,48 @@
 - 在高风险领域给最终结论
 - 编造履历、资质、数据或案例
 
-## 5. 核心机制
+## 5. 用户输入与输出契约
+
+### 输入
+
+最低输入：
+
+- `领域`
+- `风格`
+
+可选输入：
+
+- 使用场景
+- 目标受众
+- 是否偏卖课 / 偏咨询 / 偏内容传播
+- 是否需要浏览器自动打开 HTML
+
+### 输出
+
+默认输出目录：
+
+```text
+outputs/<timestamp>-<topic-slug>/
+├── report.md
+└── index.html
+```
+
+公开 repo 默认展示资产：
+
+```text
+README.md
+README.zh.md
+assets/images/expert-in-30min-concept-map.svg
+```
+
+要求：
+
+- `report.md` 是唯一源文档
+- `index.html` 是对应展示层
+- README 必须让公开访客 30 秒内理解 skill 是什么
+- 概念图必须在 README 中直接可见
+
+## 6. 核心机制
 
 本技能的核心不是“教知识”，而是“压缩格式”。
 
@@ -70,7 +132,7 @@
 
 这 6 层会让用户快速获得一种“我已经知道这个领域主要怎么回事了”的认知稳定感。
 
-## 6. 工作流设计
+## 7. 工作流设计
 
 ### 6.0 Step 0: 启动问答
 
@@ -259,7 +321,7 @@ HTML 页面建议包含：
 - 明确返回 HTML 文件路径
 - 提示用户手动打开
 
-## 7. 输出人格模式
+## 8. 输出人格模式
 
 为了适配不同使用场景，输出可切换为 4 种人格：
 
@@ -270,7 +332,7 @@ HTML 页面建议包含：
 
 默认建议优先使用 `咨询派 + IP派` 混合模式，因为最适合课程、销售、咨询和内容场景。
 
-## 8. 适用场景
+## 9. 适用场景
 
 - 陌生主题直播准备
 - 新行业内容选题与写稿
@@ -278,7 +340,7 @@ HTML 页面建议包含：
 - 培训和课程大纲搭建
 - 销售页或介绍页信息提炼
 
-## 9. 风险控制
+## 10. 风险控制
 
 本技能必须始终提醒：
 
@@ -288,7 +350,7 @@ HTML 页面建议包含：
 
 对于医疗、法律、金融、人身安全等领域，输出只能作为“理解框架”而非“执行建议”。
 
-## 10. 目录建议
+## 11. 目录建议
 
 建议目录结构如下：
 
@@ -296,6 +358,11 @@ HTML 页面建议包含：
 expert-in-30min/
 ├── SKILL.md
 ├── Spec-expert-in-30min.md
+├── README.md
+├── README.zh.md
+├── assets/
+│   └── images/
+│       └── expert-in-30min-concept-map.svg
 ├── scripts/
 │   └── open_html_report.sh
 └── references/
@@ -305,7 +372,7 @@ expert-in-30min/
     └── guardrails.md
 ```
 
-## 11. 后续可扩展方向
+## 12. 后续可扩展方向
 
 - 增加针对“卖课/咨询/短视频/播客/社群答疑”的场景模板
 - 增加“高势能开场白”和“收口句”库
@@ -313,8 +380,10 @@ expert-in-30min/
 - 增加“行业对标人物语气模拟”模块
 - 增加“从领域骨架自动生成课程大纲”模块
 - 增加“Query Builder / Signal Extractor / Confidence Filter”三段式搜索流水线
+- 增加自动生成 README 双语文案和概念图的脚本
+- 增加从 `report.md` 自动渲染 `index.html` 的生成器
 
-## 12. 成功标准
+## 13. 成功标准
 
 如果技能运行成功，结果应该满足：
 
@@ -324,3 +393,4 @@ expert-in-30min/
 - 用户拿到的是一个统一文档和一个对应 HTML，而不是一堆零散资料
 - 用户每次都会先被问到领域与风格
 - 用户最终拿到一个双文件结果目录，并自动看到 HTML 总览页
+- 公开 repo 的 README 能直接看到概念图，并支持中英文切换
